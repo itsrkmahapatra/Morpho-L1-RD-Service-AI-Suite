@@ -1,0 +1,21 @@
+# Build results & Binaries
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+*.pdb
+
+# Temp files
+*.tmp
+*.log
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor files
+.vs/
+.vscode/
+*.user
+*.suo
+.antigravity-ide/
