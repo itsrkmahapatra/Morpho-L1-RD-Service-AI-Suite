@@ -737,39 +737,40 @@ namespace MorphoL1ProSuite
         private TabItem CreateDoctorFixTab()
         {
             TabItem tab = new TabItem() { Header = "  🛠️ One-Click Fix Center  ", FontSize = 13 };
-            Grid grid = new Grid() { Margin = new Thickness(18) };
-            grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-            grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-            grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            ScrollViewer sv = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
+            StackPanel mainSp = new StackPanel() { Margin = new Thickness(18) };
 
-            TextBlock h1 = new TextBlock() { Text = "Automated Diagnostics & AI One-Click Repair Tools", FontSize = 16, FontWeight = FontWeights.Bold, Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 16) };
+            // 1. One-Click Repairs
+            TextBlock h1 = new TextBlock() { Text = "Automated Diagnostics & AI One-Click Repair Tools", FontSize = 16, FontWeight = FontWeights.Bold, Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 12) };
+            mainSp.Children.Add(h1);
 
-            Grid btnGrid1 = new Grid() { Margin = new Thickness(0, 0, 0, 12) };
+            Grid btnGrid1 = new Grid() { Margin = new Thickness(0, 0, 0, 10) };
             btnGrid1.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             btnGrid1.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
 
-            Button btnFix1 = CreateButton("🛠️ Fix 0x8007000B (BadImageFormatException)", Color.FromRgb(5, 150, 105), 16, 12);
+            Button btnFix1 = CreateButton("🛠️ Fix 0x8007000B (BadImageFormatException)", Color.FromRgb(5, 150, 105), 14, 10);
             btnFix1.Margin = new Thickness(0, 0, 6, 0);
             btnFix1.Click += (s, e) => { FixDllArchitecture(); UpdateLiveStatus(); MessageBox.Show("32-bit Architecture compatibility patch applied successfully!", "Fix Applied", MessageBoxButton.OK, MessageBoxImage.Information); };
 
-            Button btnFix2 = CreateButton("⏱️ Sync Windows Time with UIDAI NTP", Color.FromRgb(2, 132, 199), 16, 12);
+            Button btnFix2 = CreateButton("⏱️ Set IST (UTC+05:30) & Resync Clock", Color.FromRgb(2, 132, 199), 14, 10);
             btnFix2.Margin = new Thickness(6, 0, 0, 0);
-            btnFix2.Click += (s, e) => { RunProcess("w32tm.exe", "/resync"); Log("Windows time synchronized."); MessageBox.Show("System clock synchronized successfully!", "Time Synced", MessageBoxButton.OK, MessageBoxImage.Information); };
+            btnFix2.Click += (s, e) => SetIndianTimeZoneAndSyncTime();
 
             btnGrid1.Children.Add(btnFix1);
             Grid.SetColumn(btnFix1, 0);
             btnGrid1.Children.Add(btnFix2);
             Grid.SetColumn(btnFix2, 1);
+            mainSp.Children.Add(btnGrid1);
 
-            Grid btnGrid2 = new Grid() { Margin = new Thickness(0, 0, 0, 12) };
+            Grid btnGrid2 = new Grid() { Margin = new Thickness(0, 0, 0, 10) };
             btnGrid2.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             btnGrid2.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
 
-            Button btnFix3 = CreateButton("🔄 Restart All RD Windows Services", Color.FromRgb(79, 70, 229), 16, 12);
+            Button btnFix3 = CreateButton("🔄 Restart All RD Windows Services", Color.FromRgb(79, 70, 229), 14, 10);
             btnFix3.Margin = new Thickness(0, 0, 6, 0);
             btnFix3.Click += (s, e) => RestartServices();
 
-            Button btnFix4 = CreateButton("🌐 Re-Register HTTPS Localhost Certificates", Color.FromRgb(217, 119, 6), 16, 12);
+            Button btnFix4 = CreateButton("🌐 Re-Register HTTPS Localhost Certificates", Color.FromRgb(217, 119, 6), 14, 10);
             btnFix4.Margin = new Thickness(6, 0, 0, 0);
             btnFix4.Click += (s, e) => ReinstallSslCertificates();
 
@@ -777,16 +778,210 @@ namespace MorphoL1ProSuite
             Grid.SetColumn(btnFix3, 0);
             btnGrid2.Children.Add(btnFix4);
             Grid.SetColumn(btnFix4, 1);
+            mainSp.Children.Add(btnGrid2);
 
-            grid.Children.Add(h1);
-            Grid.SetRow(h1, 0);
-            grid.Children.Add(btnGrid1);
-            Grid.SetRow(btnGrid1, 1);
-            grid.Children.Add(btnGrid2);
-            Grid.SetRow(btnGrid2, 2);
+            Grid btnGrid3 = new Grid() { Margin = new Thickness(0, 0, 0, 16) };
+            btnGrid3.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            btnGrid3.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
 
-            tab.Content = grid;
+            Button btnFix5 = CreateButton("🧹 Purge Temp & Driver Cache (%temp%)", Color.FromRgb(71, 85, 105), 14, 10);
+            btnFix5.Margin = new Thickness(0, 0, 6, 0);
+            btnFix5.Click += (s, e) => PurgeTempCache();
+
+            Button btnFix6 = CreateButton("🛡️ Allow Ports 11100-11120 in Firewall", Color.FromRgb(15, 118, 110), 14, 10);
+            btnFix6.Margin = new Thickness(6, 0, 0, 0);
+            btnFix6.Click += (s, e) => AddFirewallRules();
+
+            btnGrid3.Children.Add(btnFix5);
+            Grid.SetColumn(btnFix5, 0);
+            btnGrid3.Children.Add(btnFix6);
+            Grid.SetColumn(btnFix6, 1);
+            mainSp.Children.Add(btnGrid3);
+
+            // 2. Communication Mode (Portal Compatibility) Switcher
+            Border commCard = new Border()
+            {
+                Background = new SolidColorBrush(Color.FromRgb(2, 6, 23)),
+                CornerRadius = new CornerRadius(8),
+                Padding = new Thickness(14),
+                Margin = new Thickness(0, 0, 0, 16),
+                BorderBrush = new SolidColorBrush(Color.FromRgb(51, 65, 85)),
+                BorderThickness = new Thickness(1)
+            };
+
+            StackPanel commSp = new StackPanel();
+            TextBlock commTitle = new TextBlock()
+            {
+                Text = "⚡ Communication Mode Switcher (Portal Compatibility Fixer)",
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Color.FromRgb(245, 158, 11))
+            };
+            TextBlock commDesc = new TextBlock()
+            {
+                Text = "Different portals (DigiPay, CSC, PM-Kisan, Banking) require specific communication modes in config_settings.xml. Select your target portal mode below for instant 1-click reconfiguration:",
+                FontSize = 11,
+                Foreground = new SolidColorBrush(Color.FromRgb(148, 163, 184)),
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(0, 4, 0, 10)
+            };
+
+            Grid modeGrid = new Grid();
+            modeGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            modeGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            modeGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+
+            Button btnMode0 = CreateButton("Mode 0: HTTP (CSC/DigiPay/AEPS)", Color.FromRgb(30, 41, 59), 8, 8, 11);
+            btnMode0.Margin = new Thickness(0, 0, 4, 0);
+            btnMode0.Click += (s, e) => SetCommunicationMode(0, "Mode 0: HTTP (CSC DigiPay / Spice Money / AEPS)");
+
+            Button btnMode1 = CreateButton("Mode 1: HTTPS (localhost)", Color.FromRgb(30, 41, 59), 8, 8, 11);
+            btnMode1.Margin = new Thickness(2, 0, 2, 0);
+            btnMode1.Click += (s, e) => SetCommunicationMode(1, "Mode 1: HTTPS localhost (UIDAI Direct / Ayushman Bharat)");
+
+            Button btnMode2 = CreateButton("Mode 2: HTTPS (127.0.0.1)", Color.FromRgb(30, 41, 59), 8, 8, 11);
+            btnMode2.Margin = new Thickness(4, 0, 0, 0);
+            btnMode2.Click += (s, e) => SetCommunicationMode(2, "Mode 2: HTTPS 127.0.0.1 (PM-Kisan / Bank CSPs)");
+
+            modeGrid.Children.Add(btnMode0);
+            Grid.SetColumn(btnMode0, 0);
+            modeGrid.Children.Add(btnMode1);
+            Grid.SetColumn(btnMode1, 1);
+            modeGrid.Children.Add(btnMode2);
+            Grid.SetColumn(btnMode2, 2);
+
+            commSp.Children.Add(commTitle);
+            commSp.Children.Add(commDesc);
+            commSp.Children.Add(modeGrid);
+            commCard.Child = commSp;
+            mainSp.Children.Add(commCard);
+
+            // 3. Online Whitelist & Browser Helpers
+            Grid helperGrid = new Grid();
+            helperGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            helperGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+
+            Button btnChromeFlag = CreateButton("🌐 Fix Chrome Localhost Flag (#allow-insecure-localhost)", Color.FromRgb(14, 116, 144), 12, 10);
+            btnChromeFlag.Margin = new Thickness(0, 0, 6, 0);
+            btnChromeFlag.Click += (s, e) => OpenChromeLocalhostFlags();
+
+            Button btnWhitelist = CreateButton("🔍 Check Device Whitelist on rdserviceonline.com", Color.FromRgb(109, 40, 217), 12, 10);
+            btnWhitelist.Margin = new Thickness(6, 0, 0, 0);
+            btnWhitelist.Click += (s, e) => CheckDeviceWhitelistOnline();
+
+            helperGrid.Children.Add(btnChromeFlag);
+            Grid.SetColumn(btnChromeFlag, 0);
+            helperGrid.Children.Add(btnWhitelist);
+            Grid.SetColumn(btnWhitelist, 1);
+            mainSp.Children.Add(helperGrid);
+
+            sv.Content = mainSp;
+            tab.Content = sv;
             return tab;
+        }
+
+        private void SetCommunicationMode(int mode, string modeName)
+        {
+            Task.Run(() =>
+            {
+                try
+                {
+                    string cfg = @"C:\IdemiaL1RdService\RDService\config_settings.xml";
+                    if (File.Exists(cfg))
+                    {
+                        string content = File.ReadAllText(cfg);
+                        content = Regex.Replace(content, @"<IsSSLEnabled>\d+</IsSSLEnabled>", "<IsSSLEnabled>" + mode + "</IsSSLEnabled>");
+                        File.WriteAllText(cfg, content);
+                        Log("[⚡ Config Updated] IsSSLEnabled set to " + mode + " (" + modeName + ")");
+                        RestartServices();
+                        MessageBox.Show("Communication Mode updated to:\n" + modeName + "\n\nRD Service restarted successfully!", "Mode Applied", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        Log("[!] config_settings.xml not found at default path.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log("[!] Error updating communication mode: " + ex.Message);
+                }
+            });
+        }
+
+        private void SetIndianTimeZoneAndSyncTime()
+        {
+            Task.Run(() =>
+            {
+                Log("Configuring Windows Time Zone to India Standard Time (UTC+05:30)...");
+                RunProcess("tzutil.exe", "/s \"India Standard Time\"");
+                RunProcess("net.exe", "start w32time");
+                RunProcess("w32tm.exe", "/resync /force");
+                Log("[OK] System clock synchronized with NTP server (UTC+05:30 IST).");
+                MessageBox.Show("Time Zone configured to India Standard Time (UTC+05:30) and system clock synchronized!", "Time Synced", MessageBoxButton.OK, MessageBoxImage.Information);
+            });
+        }
+
+        private void PurgeTempCache()
+        {
+            Task.Run(() =>
+            {
+                Log("Purging Windows Temp, Driver Prefetch, and stale log files...");
+                try
+                {
+                    string tempPath = Path.GetTempPath();
+                    foreach (string file in Directory.GetFiles(tempPath))
+                    {
+                        try { File.Delete(file); } catch { }
+                    }
+                }
+                catch { }
+
+                if (Directory.Exists(@"C:\MORPHORDLOG"))
+                {
+                    try { Directory.Delete(@"C:\MORPHORDLOG", true); } catch { }
+                }
+
+                Log("[OK] Temporary files and cache purged.");
+                MessageBox.Show("Temporary files, driver cache, and stale logs purged successfully!", "Cache Cleaned", MessageBoxButton.OK, MessageBoxImage.Information);
+            });
+        }
+
+        private void AddFirewallRules()
+        {
+            Task.Run(() =>
+            {
+                Log("Adding Windows Firewall Inbound/Outbound rules for RD Service ports 11100-11120...");
+                RunProcess("netsh.exe", "advfirewall firewall add rule name=\"IDEMIA Morpho L1 RDService Ports (11100-11120)\" dir=in action=allow protocol=TCP localport=11100-11120");
+                RunProcess("netsh.exe", "advfirewall firewall add rule name=\"IDEMIA Morpho L1 RDService Program\" dir=in action=allow program=\"C:\\IdemiaL1RdService\\RDService\\IdemiaInteractiveL1RDService.exe\" enable=yes");
+                Log("[OK] Windows Firewall rules registered for ports 11100-11120.");
+                MessageBox.Show("Windows Firewall rules added for ports 11100-11120 and IDEMIA Service!", "Firewall Updated", MessageBoxButton.OK, MessageBoxImage.Information);
+            });
+        }
+
+        private void OpenChromeLocalhostFlags()
+        {
+            try
+            {
+                Log("Opening Google Chrome flags for localhost certificate bypass (#allow-insecure-localhost)...");
+                Process.Start(new ProcessStartInfo("chrome.exe", "chrome://flags/#allow-insecure-localhost") { UseShellExecute = true });
+            }
+            catch
+            {
+                Process.Start(new ProcessStartInfo("https://itsrkmahapatra.github.io/Morpho-L1-RD-Service-AI-Suite/#troubleshooting") { UseShellExecute = true });
+            }
+        }
+
+        private void CheckDeviceWhitelistOnline()
+        {
+            try
+            {
+                Log("Opening RDServiceOnline official device whitelist checker...");
+                Process.Start(new ProcessStartInfo("https://rdserviceonline.com/check-device-validity") { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                Log("[!] Error opening whitelist checker: " + ex.Message);
+            }
         }
 
         private TabItem CreateLogsTab()

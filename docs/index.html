@@ -344,6 +344,15 @@
 
         <div class="matrix-item">
           <div class="matrix-header">
+            <span class="matrix-tag warning">Portal Mismatch</span>
+            <h4>Communication Mode (HTTP vs HTTPS Localhost)</h4>
+          </div>
+          <p class="matrix-desc"><strong>Cause:</strong> CSC DigiPay, Spice Money, & AEPS require HTTP (Mode 0), while UIDAI & Ayushman Bharat require HTTPS (Mode 1/2).</p>
+          <p class="matrix-fix"><strong>AI Solution:</strong> 1-Click Communication Mode Switcher dynamically updates config_settings.xml and restarts services.</p>
+        </div>
+
+        <div class="matrix-item">
+          <div class="matrix-header">
             <span class="matrix-tag warning">BadImageFormat</span>
             <h4>0x8007000B 32-bit/64-bit Architecture Collision</h4>
           </div>
@@ -358,6 +367,24 @@
           </div>
           <p class="matrix-desc"><strong>Cause:</strong> Windows 11 Core Isolation / Hypervisor Code Integrity (HVCI) blocks Morpho USB driver.</p>
           <p class="matrix-fix"><strong>AI Solution:</strong> 1-Click Registry resolver for HypervisorEnforcedCodeIntegrity and direct Core Isolation helper.</p>
+        </div>
+
+        <div class="matrix-item">
+          <div class="matrix-header">
+            <span class="matrix-tag warning">Clock / Time Drift</span>
+            <h4>Registration Failed / Key Rotation Error</h4>
+          </div>
+          <p class="matrix-desc"><strong>Cause:</strong> Windows clock drift > 5 seconds or time zone not set to Indian Standard Time (UTC+05:30).</p>
+          <p class="matrix-fix"><strong>AI Solution:</strong> 1-Click auto-sets India Standard Time (IST) and forces NTP synchronization with w32tm.</p>
+        </div>
+
+        <div class="matrix-item">
+          <div class="matrix-header">
+            <span class="matrix-tag error">Chrome Localhost Block</span>
+            <h4>Failed to Fetch / Localhost Certificate Blocked in Browser</h4>
+          </div>
+          <p class="matrix-desc"><strong>Cause:</strong> Google Chrome blocks self-signed 127.0.0.1 certificates by default on new versions.</p>
+          <p class="matrix-fix"><strong>AI Solution:</strong> 1-Click launcher for chrome://flags/#allow-insecure-localhost flag bypass.</p>
         </div>
       </div>
     </div>

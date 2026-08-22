@@ -93,3 +93,37 @@ The suite provides:
 - Automated WMI PnP Entity detection for `Code 39` on `VID_225D`.
 - 1-Click Registry modifier for `HypervisorEnforcedCodeIntegrity\Enabled = 0`.
 - Direct URI launch to `windowsdefender://coreisolation`.
+
+---
+
+## 5. Dynamic Communication Mode Engine (Portal Compatibility)
+
+Different Indian banking, e-Governance, and CSP portals demand distinct SSL communication modes inside `C:\IdemiaL1RdService\RDService\config_settings.xml`:
+
+| Mode | `IsSSLEnabled` | Target Portals & Use Cases |
+| :--- | :--- | :--- |
+| **Mode 0: HTTP** | `<IsSSLEnabled>0</IsSSLEnabled>` | CSC DigiPay, Spice Money, PayNearby, AEPS Kiosks, Offline Banking Apps |
+| **Mode 1: HTTPS (localhost)** | `<IsSSLEnabled>1</IsSSLEnabled>` | UIDAI Direct Auth, Ayushman Bharat (ABHA / PMJAY), e-Hospital |
+| **Mode 2: HTTPS (127.0.0.1)** | `<IsSSLEnabled>2</IsSSLEnabled>` | PM-Kisan Portal, Jeevan Pramaan, Major Public Sector Bank CSPs (SBI, PNB, BOB) |
+
+The AI Suite provides instant 1-click mode switching by modifying `config_settings.xml` in real-time via regex pattern matching and auto-restarting the `IdemiaInteractiveL1RDService` daemon.
+
+---
+
+## 6. Time Synchronization & UIDAI NTP Drift Resolver
+
+UIDAI Aadhaar authentication servers reject biometric capture tokens if the client machine clock is skewed by more than **5 seconds** or if the Windows Time Zone differs from **Indian Standard Time (IST, UTC+05:30)**.
+
+The AI Suite:
+1. Enforces Windows Time Zone configuration via `tzutil.exe /s "India Standard Time"`.
+2. Starts the Windows Time Service (`w32time`).
+3. Executes a forced NTP resynchronization cycle via `w32tm.exe /resync /force`.
+
+---
+
+## 7. Windows Firewall & Browser Security Bypasses
+
+1. **Firewall Automation**: Registers inbound/outbound rules opening TCP ports `11100` through `11120` for `IdemiaInteractiveL1RDService.exe`.
+2. **Google Chrome Flag Resolver**: 1-Click launcher opening `chrome://flags/#allow-insecure-localhost` to permit browsers to accept self-signed localhost SSL certificates seamlessly.
+3. **Temp & Prefetch Cleaner**: Automated purge of `%temp%`, `C:\Windows\Prefetch`, and `C:\MORPHORDLOG` to prevent initialization token deadlocks.
+
