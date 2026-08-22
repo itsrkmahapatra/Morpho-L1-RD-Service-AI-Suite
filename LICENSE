@@ -1,21 +1,79 @@
-MIT License
+END-USER LICENSE AGREEMENT (EULA) & RESTRICTED USE LICENSE
 
-Copyright (c) 2026 Raj Kishor Mahapatra (https://itsrkmahapatra.qzz.io/)
+Software: IDEMIA Morpho L1 RD Service AI Suite
+Author & Copyright Holder: Raj Kishor Mahapatra (https://itsrkmahapatra.qzz.io/)
+Contact Email: dev@itsrkmahapatra.qzz.io
+Copyright (c) 2026 Raj Kishor Mahapatra. All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+================================================================================
+IMPORTANT — READ CAREFULLY BEFORE USING THIS SOFTWARE
+================================================================================
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This End-User License Agreement ("EULA" or "License") is a legal agreement between 
+you (either an individual or a single entity) and Raj Kishor Mahapatra ("Author"), 
+the exclusive copyright owner of the "IDEMIA Morpho L1 RD Service AI Suite" 
+(including all executable binaries, source code, scripts, documentation, website, 
+and graphical assets, collectively referred to as the "Software").
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+By downloading, installing, copying, or otherwise using this Software, you agree 
+to be bound by the terms of this License. If you do not agree to the terms of this 
+License, do not download, install, or use the Software.
+
+--------------------------------------------------------------------------------
+1. GRANT OF LICENSE (USAGE ONLY)
+--------------------------------------------------------------------------------
+Subject to the terms and conditions of this Agreement, the Author hereby grants you 
+a non-exclusive, non-transferable, revocable license to:
+- Download, install, and execute the Software on any compatible Windows computer.
+- Use the Software for personal, business, banking, kiosk (CSP), e-Governance, 
+  and commercial biometric operations in conjunction with UIDAI Aadhaar authentication.
+
+--------------------------------------------------------------------------------
+2. STRICT RESTRICTIONS (NO MODIFICATION, COPYING, OR REDISTRIBUTION)
+--------------------------------------------------------------------------------
+You expressly agree that you SHALL NOT, directly or indirectly:
+- MODIFY: Alter, edit, adapt, translate, patch, or create derivative works of any 
+  part of the Software, its source code, or documentation.
+- COPY & CLONE: Copy, duplicate, reproduce, or mirror the Software or its source 
+  code for the purpose of creating competing products or repositories.
+- REVERSE ENGINEER: Decompile, disassemble, decrypt, unpack, or reverse engineer 
+  the executable binaries (including MorphoL1RDServicePro.exe and MorphoL1RDServiceManager.exe) 
+  or attempt to derive the source code or underlying algorithms.
+- REDISTRIBUTE & SELL: Sell, rent, lease, sublicense, distribute, publish, assign, 
+  or commercially exploit the Software without explicit prior written authorization 
+  from Raj Kishor Mahapatra.
+- REMOVE ATTRIBUTIONS: Remove, obscure, or alter any copyright notices, author 
+  attributions, trademarks, digital watermarks, or website links contained in or 
+  displayed by the Software.
+
+--------------------------------------------------------------------------------
+3. OWNERSHIP AND INTELLECTUAL PROPERTY
+--------------------------------------------------------------------------------
+The Software is licensed, not sold. Raj Kishor Mahapatra retains all right, title, 
+and interest in and to the Software, including all worldwide intellectual property 
+rights, copyrights, trademarks, trade secrets, patents, and proprietary rights.
+
+--------------------------------------------------------------------------------
+4. TERMINATION
+--------------------------------------------------------------------------------
+This License is effective until terminated. Your rights under this License will 
+terminate automatically without notice if you fail to comply with any of its terms. 
+Upon termination, you must cease all use of the Software and delete all copies in 
+your possession.
+
+--------------------------------------------------------------------------------
+5. DISCLAIMER OF WARRANTIES & LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE 
+FOR ANY CLAIM, DAMAGES, LOSS OF DATA, SYSTEM DOWNTIME, OR OTHER LIABILITY ARISING 
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+THE SOFTWARE.
+
+================================================================================
+For licensing inquiries, commercial partnerships, or custom integration requests:
+Lead Architect: Raj Kishor Mahapatra
+Website: https://itsrkmahapatra.qzz.io/
+Email: dev@itsrkmahapatra.qzz.io
+================================================================================

@@ -97,6 +97,21 @@ namespace MorphoL1ProSuite
             this.Foreground = Brushes.White;
             this.FontFamily = new FontFamily("Segoe UI, Inter, Arial");
 
+            try
+            {
+                using (System.Drawing.Icon sysIcon = System.Drawing.Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location))
+                {
+                    if (sysIcon != null)
+                    {
+                        this.Icon = System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
+                            sysIcon.Handle,
+                            Int32Rect.Empty,
+                            BitmapSizeOptions.FromEmptyOptions());
+                    }
+                }
+            }
+            catch { }
+
             ApplyCustomStyles();
 
             Grid rootGrid = new Grid();

@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------
-   IDEMIA Morpho L1 RD Service AI Suite - Simulator Logic
+   IDEMIA Morpho L1 RD Service AI Suite - Simulator & App Logic
    Lead Architect: Raj Kishor Mahapatra (https://itsrkmahapatra.qzz.io/)
 ------------------------------------------------------------- */
 
@@ -20,6 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const simFCount = document.getElementById('simFCount');
   const simFType = document.getElementById('simFType');
   const simTimeout = document.getElementById('simTimeout');
+
+  const downloadToast = document.getElementById('downloadToast');
+  const toastTitle = document.getElementById('toastTitle');
+  const toastDesc = document.getElementById('toastDesc');
+  const downloadBtns = document.querySelectorAll('.download-btn');
+
+  function showToast(appName) {
+    if (!downloadToast) return;
+    toastTitle.textContent = `Downloading ${appName}...`;
+    toastDesc.textContent = 'Your binary is downloading directly. Run as Administrator.';
+    downloadToast.classList.add('show');
+    setTimeout(() => {
+      downloadToast.classList.remove('show');
+    }, 4500);
+  }
+
+  downloadBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const app = btn.getAttribute('data-app') || 'Morpho L1 AI Suite';
+      showToast(app);
+    });
+  });
 
   function setStatus(text, color, badgeText = 'Active') {
     simStatusText.textContent = text;
