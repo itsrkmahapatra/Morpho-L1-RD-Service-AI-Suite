@@ -1074,22 +1074,54 @@ namespace MorphoL1ProSuite
 
             TextBlock details = new TextBlock()
             {
-                Text = "• Fully Compliant with UIDAI Aadhaar Registered Device (RD) Service Specification v2.0\n" +
+                Text = "• Compliant with UIDAI Aadhaar Registered Device (RD) Service Specification v2.0\n" +
                        "• Autonomous AI Doctor: Background self-healing of DLL collisions, dropped services, and clock drift\n" +
                        "• Memory Integrity (HVCI) Resolver: 1-Click repair for Device Manager Code 39\n" +
                        "• Native In-App Capture Studio — 100% functional without external browsers\n" +
-                       "• Embedded Auto-Deployment: VC++ 2010, VC++ 2015-2022, IDEMIA v5.0.0.10 drivers\n" +
+                       "• 1-Click Dynamic Communication Mode Switcher (HTTP Mode 0 vs HTTPS Mode 1/2)\n" +
                        "• Compatible with all Banking CSPs, CSC DigiPay, Spice Money, PayNearby, Ayushman Bharat, etc.",
-                FontSize = 12,
+                FontSize = 11,
                 Foreground = new SolidColorBrush(Color.FromRgb(203, 213, 225)),
-                LineHeight = 22
+                LineHeight = 18,
+                Margin = new Thickness(0, 0, 0, 12)
             };
+
+            Border legalCard = new Border()
+            {
+                Background = new SolidColorBrush(Color.FromRgb(15, 23, 42)),
+                CornerRadius = new CornerRadius(8),
+                Padding = new Thickness(12),
+                BorderBrush = new SolidColorBrush(Color.FromRgb(51, 65, 85)),
+                BorderThickness = new Thickness(1)
+            };
+
+            StackPanel legalSp = new StackPanel();
+            TextBlock legalTitle = new TextBlock() { Text = "⚖️ LEGAL NOTICES, THIRD-PARTY ATTRIBUTIONS & DISCLAIMERS", FontSize = 10, FontWeight = FontWeights.Bold, Foreground = new SolidColorBrush(Color.FromRgb(245, 158, 11)) };
+            TextBlock legalText = new TextBlock()
+            {
+                Text = "• IDEMIA, Morpho, MorphoSmart, and MSO 1300 E3 are registered trademarks of IDEMIA Identity & Security France.\n" +
+                       "• Microsoft, Visual C++, Windows, and .NET are registered trademarks of Microsoft Corporation.\n" +
+                       "• UIDAI and Aadhaar are registered trademarks and statutory authorities of the Government of India.\n" +
+                       "• DISCLAIMER: This software is an independent utility created by Raj Kishor Mahapatra. It is not affiliated with, endorsed by, or sponsored by IDEMIA, Microsoft, or UIDAI.\n" +
+                       "• LICENSE: End-User Restricted License Agreement (EULA). Usage permitted; copying or modifying is strictly prohibited.",
+                FontSize = 10,
+                Foreground = new SolidColorBrush(Color.FromRgb(148, 163, 184)),
+                LineHeight = 15,
+                Margin = new Thickness(0, 4, 0, 0)
+            };
+            legalSp.Children.Add(legalTitle);
+            legalSp.Children.Add(legalText);
+            legalCard.Child = legalSp;
 
             sp.Children.Add(h1);
             sp.Children.Add(ver);
             sp.Children.Add(devCard);
             sp.Children.Add(details);
-            border.Child = sp;
+            sp.Children.Add(legalCard);
+
+            ScrollViewer sv = new ScrollViewer() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
+            sv.Content = sp;
+            border.Child = sv;
             tab.Content = border;
             return tab;
         }

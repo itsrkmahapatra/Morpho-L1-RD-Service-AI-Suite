@@ -145,3 +145,14 @@ This software is governed by the **End-User Restricted License Agreement (EULA)*
 - **Restrictions**: Modifying, decompiling, reverse engineering, copying, cloning, redistributing, or selling the Software or its source code without prior express written authorization from Raj Kishor Mahapatra is strictly prohibited.
 
 See the full [LICENSE](LICENSE) file for complete legal terms.
+
+---
+
+## ⚖️ Third-Party Notices & Trademarks
+
+- **IDEMIA**: `IDEMIA`, `Morpho`, `MorphoSmart`, and `MSO 1300 E3` are trademarks of **IDEMIA Identity & Security France**. The underlying driver installers and firmware are proprietary to IDEMIA.
+- **Microsoft**: `Microsoft`, `Visual C++`, `Windows`, and `.NET Framework` are registered trademarks of **Microsoft Corporation**.
+- **UIDAI**: `UIDAI` and `Aadhaar` are registered trademarks and statutory authorities of the **Unique Identification Authority of India (Government of India)**.
+- **Non-Affiliation Disclaimer**: This project is an independent diagnostic and self-healing suite authored by Raj Kishor Mahapatra and is not affiliated with, endorsed by, or sponsored by IDEMIA, Microsoft, or UIDAI.
+
+For complete third-party licensing terms and attributions, see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

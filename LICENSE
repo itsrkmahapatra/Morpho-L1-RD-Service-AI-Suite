@@ -71,6 +71,21 @@ FOR ANY CLAIM, DAMAGES, LOSS OF DATA, SYSTEM DOWNTIME, OR OTHER LIABILITY ARISIN
 FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 THE SOFTWARE.
 
+--------------------------------------------------------------------------------
+6. THIRD-PARTY TRADEMARKS, SOFTWARE & NON-AFFILIATION DISCLAIMERS
+--------------------------------------------------------------------------------
+- "IDEMIA", "Morpho", "MorphoSmart", and "MSO 1300 E3" are registered trademarks 
+  of IDEMIA Identity & Security France. The official driver installer is the 
+  proprietary property of IDEMIA.
+- "Microsoft", "Visual C++", "Windows", and ".NET Framework" are trademarks of 
+  Microsoft Corporation.
+- "UIDAI" and "Aadhaar" are registered trademarks and statutory authorities of 
+  the Unique Identification Authority of India (Government of India).
+- NON-AFFILIATION: This software is an independent diagnostic utility authored by 
+  Raj Kishor Mahapatra and is not affiliated with, endorsed by, or officially 
+  sponsored by IDEMIA, Microsoft, or UIDAI.
+- For third-party notices and license references, see THIRD_PARTY_NOTICES.md.
+
 ================================================================================
 For licensing inquiries, commercial partnerships, or custom integration requests:
 Lead Architect: Raj Kishor Mahapatra
