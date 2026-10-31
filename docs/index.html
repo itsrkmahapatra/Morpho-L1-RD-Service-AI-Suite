@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,11 @@
   <meta name="author" content="Raj Kishor Mahapatra">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#0B0F19">
+
+  <!-- Security Headers Emulation -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://itsrkmahapatra.github.io/Morpho-L1-RD-Service-AI-Suite/">
 
   <!-- Favicon & App Icons -->
@@ -179,7 +184,7 @@
   <header class="navbar">
     <div class="container nav-content">
       <a href="#" class="brand" style="text-decoration: none;">
-        <img src="logo.png" alt="IDEMIA Morpho L1 Logo" class="brand-logo-img">
+        <img src="logo.png" alt="IDEMIA Morpho L1 Logo" class="brand-logo-img" width="40" height="40" fetchpriority="high" decoding="async">
         <div class="brand-text">
           <span class="brand-title">IDEMIA MORPHO L1</span>
           <span class="brand-subtitle">AI SUITE v3.5</span>
@@ -509,7 +514,7 @@
       <div class="download-grid">
         <div class="download-card featured">
           <div class="card-badge">RECOMMENDED</div>
-          <img src="logo.png" alt="Pro Suite Logo" class="card-logo-img">
+          <img src="logo.png" alt="Pro Suite Logo" class="card-logo-img" width="64" height="64" loading="lazy" decoding="async">
           <h3 class="card-title">Morpho L1 RD Service Pro</h3>
           <div class="card-size">~63 MB â€¢ All-in-One Standalone</div>
           <p class="card-desc">Includes embedded IDEMIA v5.0.0.10 installer, Visual C++ 2010 & 2015-2022 runtimes (x86 & x64), 1-Click Auto Setup, and Native Studio.</p>
@@ -525,7 +530,7 @@
         </div>
 
         <div class="download-card">
-          <img src="logo.png" alt="Manager Logo" class="card-logo-img">
+          <img src="logo.png" alt="Manager Logo" class="card-logo-img" width="64" height="64" loading="lazy" decoding="async">
           <h3 class="card-title">Morpho L1 Service Manager</h3>
           <div class="card-size">~76 KB â€¢ Ultra Lightweight</div>
           <p class="card-desc">Portable diagnostics, live service monitor, Core Isolation fixer, and In-App Native Biometric Studio.</p>
@@ -557,7 +562,7 @@
     <div class="container footer-content">
       <div class="footer-left">
         <div class="footer-brand">
-          <img src="logo.png" alt="Logo" class="footer-logo-img">
+          <img src="logo.png" alt="Logo" class="footer-logo-img" width="32" height="32" loading="lazy" decoding="async">
           <span class="footer-logo-text">IDEMIA Morpho L1 AI Suite</span>
         </div>
         <p>Architected & Developed by <strong>Raj Kishor Mahapatra</strong></p>
@@ -575,6 +580,6 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
