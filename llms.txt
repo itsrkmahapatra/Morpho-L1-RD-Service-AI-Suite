@@ -1,0 +1,16 @@
+# IDEMIA Morpho L1 RD Service AI Suite
+> The definitive enterprise diagnostic toolkit, 1-click driver installer, and in-app native biometric capture studio for IDEMIA Morpho MSO 1300 E3 L1 biometric scanners.
+
+## Core Capabilities
+- 1-Click All-in-One Automated Installation: Extracts runtime dependencies, Visual C++ runtimes, and drivers without user intervention.
+- Autonomous AI Self-Healing Doctor: Detects and repairs Windows 11 Memory Integrity Code 39 driver errors, 32-bit/64-bit DLL collisions (0x8007000B), and stopped background services.
+- Native In-App Biometric Studio: Real-time UIDAI Registered Device v2.0 capture simulation and hardware testing without requiring a web browser.
+- Communication Mode Switcher: 1-Click toggle between HTTP (Port 11100 Mode 0 for CSC DigiPay / AEPS) and HTTPS (Mode 1 for Ayushman Bharat, UIDAI, and PM-Kisan).
+- Resilient TLS Stream Socket: Zero-violation Unix newline header parsing bypassing .NET protocol exceptions.
+
+## Official Links & Resources
+- Website: https://itsrkmahapatra.github.io/Morpho-L1-RD-Service-AI-Suite/
+- Repository: https://github.com/itsrkmahapatra/Morpho-L1-RD-Service-AI-Suite
+- Developer: https://itsrkmahapatra.qzz.io/
+- Pro Edition Executable: https://github.com/itsrkmahapatra/Morpho-L1-RD-Service-AI-Suite/raw/main/MorphoL1RDServicePro.exe
+- Manager Executable: https://github.com/itsrkmahapatra/Morpho-L1-RD-Service-AI-Suite/raw/main/MorphoL1RDServiceManager.exe

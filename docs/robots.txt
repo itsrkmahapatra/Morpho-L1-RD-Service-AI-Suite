@@ -1,0 +1,60 @@
+# ==============================================================================
+# ROBOTS.TXT — IDEMIA Morpho L1 RD Service AI Suite
+# Strategic Directives for Search Engines & AI Crawlers for World #1 Visibility
+# Canonical: https://itsrkmahapatra.github.io/Morpho-L1-RD-Service-AI-Suite/
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /style.css
+Allow: /app.js
+Allow: /logo.png
+Allow: /favicon.ico
+Allow: /llms.txt
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Generative AI, Answer Engines & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Sitemaps
+Sitemap: https://itsrkmahapatra.github.io/Morpho-L1-RD-Service-AI-Suite/sitemap.xml
