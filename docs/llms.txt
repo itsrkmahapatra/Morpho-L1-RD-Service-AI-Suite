@@ -14,3 +14,4 @@
 - Developer: https://itsrkmahapatra.qzz.io/
 - Pro Edition Executable: https://github.com/itsrkmahapatra/Morpho-L1-RD-Service-AI-Suite/raw/main/MorphoL1RDServicePro.exe
 - Manager Executable: https://github.com/itsrkmahapatra/Morpho-L1-RD-Service-AI-Suite/raw/main/MorphoL1RDServiceManager.exe
+
